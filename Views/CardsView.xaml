@@ -1,0 +1,47 @@
+<Window x:Class="WSDF.Views.CardsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSDF.Views"
+        mc:Ignorable="d"
+        Title="Управление карточками" Height="450" Width="800">
+    <Grid x:Name="we1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="640*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="177*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="usersWind" Margin="10" Click="usersWind_Click">Пользователи</Button>
+        </Grid>
+        <DataGrid x:Name="DataB" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="1" 
+               Loaded="DataB_Loaded" SelectionChanged="DataB_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID карточки" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Название" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Изображение" Binding="{Binding img}" />
+                <DataGridTextColumn Header="Количество пользователей" Binding="{Binding UsersCount}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid x:Name="a1" Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="addCard" Margin="10" Click="addCard_Click">Добавить</Button>
+            <Button x:Name="updCard" Margin="10" Click="updCard_Click" Grid.Column="1">Изменить</Button>
+            <Button x:Name="delCard" Margin="10" Click="delCard_Click" Grid.Column="2">Удалить</Button>
+        </Grid>
+    </Grid>
+</Window>
