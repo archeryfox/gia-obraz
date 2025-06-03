@@ -1,0 +1,28 @@
+<Window x:Class="WSDF.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSDF.Views"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="350" Width="400" WindowStartupLocation="CenterScreen">
+    
+    <Grid>
+        <StackPanel VerticalAlignment="Center" Margin="20">
+            <TextBlock Text="Авторизация" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            
+            <TextBlock Text="Имя пользователя:" Margin="0,0,0,5"/>
+            <TextBox x:Name="UsernameTextBox" Padding="5" Margin="0,0,0,15"/>
+            
+            <TextBlock Text="Пароль:" Margin="0,0,0,5"/>
+            <PasswordBox x:Name="PasswordBox" Padding="5" Margin="0,0,0,20"/>
+            
+            <Button x:Name="LoginButton" Content="Войти" Padding="10,5" Width="150" Click="LoginButton_Click"/>
+            
+            <Button x:Name="RegisterButton" Content="Регистрация" Padding="10,5" Width="150" Click="RegisterButton_Click" Margin="0,10,0,0"/>
+            
+            <TextBlock x:Name="ErrorTextBlock" Foreground="Red" TextWrapping="Wrap" Margin="0,10,0,0" 
+                       HorizontalAlignment="Center" Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</Window>
